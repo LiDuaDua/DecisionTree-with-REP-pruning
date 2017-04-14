@@ -1,0 +1,11 @@
+1. Zhongliu Li zlr8947
+   Xiaoyang Wang
+2. Yes. Added a field called the "modeClass" to store the mode class passint the node in the training process
+3. Split the unknown attributes into different values base on the ratio of the known values.
+4. post order DFS + Reduce Error Pruning
+    Traverse the tree from buttom up. 
+    if the node is leaf, return 
+    if the node is non-leaf and all its children are leaf, then replace the node by a leaf node which represents the modeCLass of the original node. If the accuracy does not reduce, then keep the pruning. Else cancel the pruning.
+
+   We take this strategy because of its simplicity and high speed. This stategy only traverses the tree one time and achieve a O(n) time complexity.
+5. 

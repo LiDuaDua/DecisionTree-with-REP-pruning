@@ -9,10 +9,10 @@ import copy
 def preprocess(examples):
   data_list = copy.deepcopy(examples)
   ProbDict = {}
-  for attribute in data_list[0]:
+  for attribute in examples[0]:
     ProbDict[attribute] = {'total': 0}
 
-  for row in data_list:
+  for row in examples:
     for attribute, value in row.iteritems():
       if not value == '?':
         ProbDict[attribute]['total'] += 1
@@ -27,7 +27,7 @@ def preprocess(examples):
       if not attribute == 'total':
         table[attribute] = table[attribute]/table['total']
 
-  for row in data_list:
+  for row in examples:
     for attribute, value in row.iteritems():
       if value == '?':
         num = 0.0
@@ -39,7 +39,7 @@ def preprocess(examples):
             row[attribute] = key
             break
 
-  return data_list
+  return examples
 
 def pureClass(examples):
   if len(examples) == 1:

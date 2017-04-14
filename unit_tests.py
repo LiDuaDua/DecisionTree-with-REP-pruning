@@ -157,6 +157,6 @@ testID3AndEvaluate()
 testID3AndTest()
 testPruning()
 testPruningOnHouseData("house_votes_84.data")
-#randomPlot("house_votes_84.data")
+randomPlot("house_votes_84.data")
 
   

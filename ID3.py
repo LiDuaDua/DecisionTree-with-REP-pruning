@@ -3,11 +3,8 @@ from node import Node
 import math
 import parse
 import random
-import copy
-
 
 def preprocess(examples):
-  data_list = copy.deepcopy(examples)
   ProbDict = {}
   for attribute in examples[0]:
     ProbDict[attribute] = {'total': 0}
